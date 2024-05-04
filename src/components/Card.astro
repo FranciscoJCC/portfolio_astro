@@ -1,0 +1,49 @@
+---
+
+interface Props {
+	title: string;
+	urlProject?: string;
+	urlGithub?: string;
+	photo: string;
+	tags: string[];
+	slug: string;
+}
+
+const { title, tags, urlProject, urlGithub, photo, slug } = Astro.props;
+
+---
+
+<article
+	class="bg-pii-green-bg hover:cursor-pointer rounded-md flex-1 my-3"
+>
+	<div class="p-5">
+		
+		<img
+			class="h-40 w-full object-cover" 
+			src={photo} 
+			alt={title}
+		>
+		
+		<a href={`/projects/${slug}`}>
+			<h3 class="text-pii-gray mt-0.5 text-lg font-medium text-gray-900">
+				{title}
+			</h3>
+		</a>
+
+		<p class="block text-xs text-gray-500">
+			{ urlProject }
+        </p>
+
+		<div class="mt-4 flex flex-wrap gap-1">
+			{
+				tags.map((tag) => (
+					<span
+						class="rounded-full bg-pii-green px-2.5 py-0.5 text-xs text-purple"
+					>
+						{tag}
+					</span>
+				))
+			}
+		</div>
+	</div>
+</article>
