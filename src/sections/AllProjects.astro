@@ -1,0 +1,28 @@
+---
+import Card from "../components/Card.astro";
+import { PROJECTS } from "../consts/projects";
+import ButtonPrimary from "../components/ButtonPrimary.astro";
+
+const listProjects = PROJECTS;
+---
+
+<div id="projects" class="mx-10 mt-12">
+  <slot />
+  <div class="mt-4">
+    <div class="grid grid-cols-1 md:grid-cols-4 md:gap-4 mx-10">
+      {
+        listProjects.map((project) => (
+          <Card
+            title={project.title}
+            urlProject={project.urlProject}
+            urlGithub={project.urlGithub}
+            description={project.description}
+            photo={project.photo}
+            slug={project?.slug}
+            tags={project.tags}
+          />
+        ))
+      }
+    </div>
+  </div>
+</div>

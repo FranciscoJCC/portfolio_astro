@@ -7,7 +7,8 @@ export default {
 			"pii-black": "#1F1F1F",
 			"pii-green": "#49B1A6",
 			"pii-green-bg": "#49b1a74d",
-			"pii-gray": "#E2E8F0"
+			"pii-gray": "#E2E8F0",
+			"pii-gray-bg": "#ece8f01a"
 		}
 	},
 	plugins: [],

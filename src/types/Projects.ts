@@ -7,5 +7,6 @@ export interface Projects {
     photo: string,
     urlProject?: string,
     urlGithub?: string,
-    tags: string[]
+    tags: string[],
+    main: boolean
 }

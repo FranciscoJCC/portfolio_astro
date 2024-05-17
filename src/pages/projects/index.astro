@@ -1,0 +1,13 @@
+---
+import Layout from '../../layouts/Main.astro';
+import Navbar from '../../components/Navbar.astro';
+import SectionTitle from '../../components/SectionTitle.astro';
+import AllProjects from '../../sections/AllProjects.astro';
+---
+
+<Layout title='Projects | Francisco Candelario'>
+    <Navbar urlAboutMe='/#aboutome' urlExperience='/#experience' urlProjects='/projects'/>
+    <AllProjects>
+        <SectionTitle title="All Projects"/>
+    </AllProjects>
+</Layout>

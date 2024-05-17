@@ -1,49 +1,42 @@
 ---
-
 interface Props {
-	title: string;
-	urlProject?: string;
-	urlGithub?: string;
-	photo: string;
-	tags: string[];
-	slug: string;
+  title: string;
+  urlProject?: string;
+  urlGithub?: string;
+  description: string;
+  photo: string;
+  tags: string[];
+  slug: string;
 }
 
-const { title, tags, urlProject, urlGithub, photo, slug } = Astro.props;
-
+const { title, tags, urlProject, urlGithub, description, photo, slug } =
+  Astro.props;
 ---
 
 <article
-	class="bg-pii-green-bg hover:cursor-pointer rounded-md flex-1 my-3"
+  class="bg-pii-gray-bg hover:cursor-pointer rounded-md flex-1 my-3 transform hover:scale-105 duration-300 ease-in-out"
 >
-	<div class="p-5">
-		
-		<img
-			class="h-40 w-full object-cover" 
-			src={photo} 
-			alt={title}
-		>
-		
-		<a href={`/projects/${slug}`}>
-			<h3 class="text-pii-gray mt-0.5 text-lg font-medium text-gray-900">
-				{title}
-			</h3>
-		</a>
+  <a href={`/projects/${slug}`}>
+    <div class="p-5">
+      <img class="h-40 w-full rounded-md" src={photo} alt={title} transition:name={"img-project-" + slug} transition:animate="slide" /> <!-- object-cover -->
 
-		<p class="block text-xs text-gray-500">
-			{ urlProject }
-        </p>
+      <h3 class="text-pii-gray mt-3 text-xl">
+        {title}
+      </h3>
 
-		<div class="mt-4 flex flex-wrap gap-1">
-			{
-				tags.map((tag) => (
-					<span
-						class="rounded-full bg-pii-green px-2.5 py-0.5 text-xs text-purple"
-					>
-						{tag}
-					</span>
-				))
-			}
-		</div>
-	</div>
+      <p class="mt-5 block text-xs truncate text-pii-gray">
+        {description}
+      </p>
+
+      <div class="mt-4 flex flex-wrap gap-1">
+        {
+          tags.map((tag) => (
+            <span class="rounded-full bg-pii-green px-2.5 py-0.5 text-xs text-pii-black">
+              {tag}
+            </span>
+          ))
+        }
+      </div>
+    </div>
+  </a>
 </article>

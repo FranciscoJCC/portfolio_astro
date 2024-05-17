@@ -1,13 +1,14 @@
 ---
 import Card from "../components/Card.astro"
 import { PROJECTS } from "../consts/projects"
+import ButtonPrimary from "../components/ButtonPrimary.astro";
 
-/* Ultimos 4 cuatro proyectos */
-const listProjects = PROJECTS.slice(PROJECTS.length - 4);
+/* Solo proyectos principales */
+const listProjects = PROJECTS.filter((project) => project.main == true);
 
 ---
 
-<div id="experience" class="mx-10 mt-12">
+<div id="projects" class="mx-10 mt-12">
   <div class="flex justify-center mb-5">
     <div class="w-auto">
       <h2 class="text-pii-gray text-center text-3xl mx-14 mb-3">
@@ -17,13 +18,7 @@ const listProjects = PROJECTS.slice(PROJECTS.length - 4);
     </div>
   </div>
 
-  <div class="mt-4">
-    <!--
-  Heads up! 👋
-
-  Custom CSS:
-    - animate-background https://github.com/markmead/hyperui/blob/main/tailwind.preset.js
--->
+  <div class="mt-8">
     <div class="grid grid-cols-1 md:grid-cols-4 md:gap-4 mx-10">
       {
         listProjects.map((project) => (
@@ -31,6 +26,7 @@ const listProjects = PROJECTS.slice(PROJECTS.length - 4);
               title= { project.title }
               urlProject= { project.urlProject }
               urlGithub= { project.urlGithub }
+              description= { project.description }
               photo= { project.photo }
               slug= { project?.slug }
               tags= { project.tags }
@@ -40,9 +36,7 @@ const listProjects = PROJECTS.slice(PROJECTS.length - 4);
     </div>
 
     <div class="flex justify-center text-center my-4">
-      <a class="bg-pii-green-bg px-4 py-2 rounded-full text-pii-green transform hover:scale-105 duration-300 ease-in-out" href="/projects">
-        View All Projects
-      </a>
+      <ButtonPrimary text="View all Projects" url="/projects" />
     </div>
   </div>
 </div>
