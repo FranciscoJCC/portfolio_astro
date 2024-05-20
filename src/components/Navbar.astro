@@ -1,4 +1,7 @@
 ---
+import { Image } from "astro:assets";
+import logoMain from "./../images/navbar-logo.png";
+
 interface Props {
   urlAboutMe?: string;
   urlExperience?: string;
@@ -15,11 +18,11 @@ const { urlAboutMe = "#presentation", urlExperience = "#experience", urlProjects
       <div class="md:flex md:items-center md:gap-12">
         <a class="block text-teal-600" href="/">
           <span class="sr-only">Home</span>
-          <img src="images/darth-vader-icon.png" class="w-5 h-5" alt="" srcset="">
+          <Image src={logoMain} class="w-10 h-10" alt="" srcset="" />
         </a>
       </div>
 
-      <div class="hidden md:block">
+      <div id="menu-open">
         <nav aria-label="Global">
           <ul class="flex items-center gap-4 text-pii-green">
             <li>
@@ -39,7 +42,7 @@ const { urlAboutMe = "#presentation", urlExperience = "#experience", urlProjects
 
       <div class="flex items-center gap-4">
         <div class="block md:hidden">
-          <button class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
+          <button id="menu-button" class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="h-5 w-5"
@@ -56,3 +59,17 @@ const { urlAboutMe = "#presentation", urlExperience = "#experience", urlProjects
     </div>
   </div>
 </header>
+
+<script>
+  const buttonMenu = document.querySelector("#menu-button") as Element;
+  const menuOpen = document.querySelector('#menu-open') as Element;
+
+  document.addEventListener("astro:page-load", () => {
+
+    console.log("astro-load");
+    buttonMenu.addEventListener("click", () => {
+      menuOpen.classList.toggle("hidden");
+    })
+  })
+  
+</script>
