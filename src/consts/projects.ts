@@ -7,7 +7,7 @@ export const PROJECTS: Array<Projects> = [
         title: "SaaS Birssa",
         description: " Birssa is a multichannel web system for creating collection campaigns and facilitating the management of payment agreements with debtors. This web system is designed for any collection agency to be able to use it",
         urlProject: "https://www.birssa.com",
-        photo: "images/projects/birssa.svg",
+        photo: "src/images/projects/birssa.png",
         tags: ['Laravel', 'Vue', 'Vuetify','MySQL', 'Twilio', 'SendGrid'],
         main: true
     },
@@ -17,8 +17,18 @@ export const PROJECTS: Array<Projects> = [
         title: "Gateway Fabrication",
         description: "A web application was developed to track purchase orders, inventories of computer equipment and control of responsive letters from collaborators, also control of inventories of supplies in warehouses. (available only on localhost)",
         urlGithub: "https://www.youtube.com",
-        photo: "images/projects/gateway.png",
+        photo: "src/images/projects/gateway.png",
         tags: ['Laravel', 'Vue', 'Vuetify', 'MySQL', 'SQL Server'],
+        main: true
+    },
+    {
+        id: "tonersfull",
+        slug: "tonersfull",
+        title: "Web Page Toner´s Full",
+        description: "I designed a website for the company Toner's Full, which is dedicated to selling toners and leasing multifunctional printers.",
+        urlProject: "https://www.tonersfull.com",
+        photo: "src/images/projects/tonersfull.png",
+        tags: ['HTML5', 'Tailwind', 'PHP', 'Javascript'],
         main: true
     },
     {
@@ -38,9 +48,9 @@ export const PROJECTS: Array<Projects> = [
         description: "Project made only to practice angular and tailwind css. Site still under construction",
         urlProject: "https://store-two-chi.vercel.app/",
         urlGithub: "https://github.com/FranciscoJCC/angular_platzi_store",
-        photo: "https://www.ovhcloud.com/sites/default/files/styles/large_screens_1x/public/2022-05/whatis_rest_api.webp",
+        photo: "src/images/projects/api-rest-platzi.png",
         tags: ['Angular', 'Tailwind', 'API Fake Platzi'],
-        main: true
+        main: false
     },
     {
         id: "sellers-api-apirest",
