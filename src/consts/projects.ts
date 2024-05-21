@@ -55,45 +55,23 @@ export const PROJECTS: Array<Projects> = [
     {
         id: "sellers-api-apirest",
         slug: "sellers-api-apirest",
-        title: "Sellers API REST",
+        title: "Sellers API REST 👨‍🎓",
         description: "lorem impsun description of profject example text of description item card example",
-        urlProject: "www.google.com",
-        urlGithub: "www.youtube.com",
-        photo: "https://www.ovhcloud.com/sites/default/files/styles/large_screens_1x/public/2022-05/whatis_rest_api.webp",
-        tags: ['Nodejs', 'Express'],
+        urlGithub: "https://github.com/FranciscoJCC/node_sellers",
+        photo: "src/images/projects/api-rest-sellers.png",
+        tags: ['Nodejs', 'Express', 'Sequelize', 'Joi', 'Passport', 'PostgreSQL'],
         main: false
     },
     {
-        id: "sellers-api-two",
-        slug: "sellers-api-two",
-        title: "STORE API REST2",
+        id: "platzi-api-rest-nestjs",
+        slug: "platzi-api-rest-nestjs",
+        title: "API REST NestJs 👨‍🎓",
         description: "lorem impsun description of profject example text of description item card example",
         urlProject: "https://www.google.com",
         urlGithub: "https://www.youtube.com",
         photo: "https://www.ovhcloud.com/sites/default/files/styles/large_screens_1x/public/2022-05/whatis_rest_api.webp",
-        tags: ['Nodejs', 'Express'],
+        tags: ['Nestjs', 'Swagger', 'PostgreSQL', 'TypeORM'],
         main: false
     },
-    {
-        id: "sellers-api-one",
-        slug: "sellers-api-one",
-        title: "Sellers API",
-        description: "lorem impsun description of profject example text of description item card example",
-        urlProject: "www.google.com",
-        urlGithub: "www.youtube.com",
-        photo: "https://www.ovhcloud.com/sites/default/files/styles/large_screens_1x/public/2022-05/whatis_rest_api.webp",
-        tags: ['Nodejs', 'Express'],
-        main: false
-    },
-    {
-        id: "api-nestjs",
-        slug: "api-nestjs",
-        title: "API REST",
-        description: "lorem impsun description of profject example text of description item card example",
-        urlProject: "www.google.com",
-        urlGithub: "www.youtube.com",
-        photo: "https://www.ovhcloud.com/sites/default/files/styles/large_screens_1x/public/2022-05/whatis_rest_api.webp",
-        tags: ['NestJs', 'Express'],
-        main: false
-    }
+    
 ] as const;
