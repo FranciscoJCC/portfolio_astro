@@ -67,7 +67,7 @@ const logoMain = new Proxy({"src":"/_astro/navbar-logo.DD5TABvZ.png","width":768
 								return structuredClone(target);
 							}
 							if (name === 'fsPath') {
-								return "C:/Users/Fjcc1/apps_projects/astro/portfolio_cv/src/images/navbar-logo.png";
+								return "C:/Users/Fjcc1/apps_projects/astro/portfolio_cv/src/assets/navbar-logo.png";
 							}
 							
 							return target[name];
@@ -105,8 +105,11 @@ const $$Astro$5 = createAstro();
 const $$Card = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$5, $$props, $$slots);
   Astro2.self = $$Card;
-  const { title, tags, urlProject, urlGithub, description, photo, slug } = Astro2.props;
-  return renderTemplate`${maybeRenderHead()}<article class="bg-pii-gray-bg hover:cursor-pointer rounded-md flex-1 my-3 transform hover:scale-105 duration-300 ease-in-out"> <a${addAttribute(`/projects/${slug}`, "href")}> <div class="p-5"> <img class="h-40 w-full rounded-md"${addAttribute(photo, "src")}${addAttribute(title, "alt")}${addAttribute(renderTransition($$result, "dycb3fq2", "slide", "img-project-" + slug), "data-astro-transition-scope")}> <!-- object-cover --> <h3 class="text-pii-gray mt-3 text-xl"> ${title} </h3> <p class="mt-5 block text-xs truncate text-pii-gray"> ${description} </p> <div class="mt-4 flex flex-wrap gap-1"> ${tags.map((tag) => renderTemplate`<span class="rounded-full bg-pii-green px-2.5 py-0.5 text-xs text-pii-black"> ${tag} </span>`)} </div> </div> </a> </article>`;
+  const { title, tags, description, photo, slug } = Astro2.props;
+  const images = /* #__PURE__ */ Object.assign({"/src/assets/projects/agendacrit.png": () => import('../agendacrit_RzjEMFLZ.mjs'),"/src/assets/projects/api-rest-platzi.png": () => import('../api-rest-platzi_Tg2RwUcv.mjs'),"/src/assets/projects/api-rest-sellers.png": () => import('../api-rest-sellers_D6aH7FF5.mjs'),"/src/assets/projects/birssa.png": () => import('../birssa_CF_yVKZl.mjs'),"/src/assets/projects/gateway.png": () => import('../gateway_BFfdhGTl.mjs'),"/src/assets/projects/tonersfull.png": () => import('../tonersfull_nYfRWR0s.mjs')});
+  if (!images[photo])
+    throw new Error(`"${photo}" does not exist in glob: "src/assets/projects/*.{jpeg,jpg,png,gif}"`);
+  return renderTemplate`${maybeRenderHead()}<article class="bg-pii-gray-bg hover:cursor-pointer rounded-md flex-1 my-3 transform hover:scale-105 duration-300 ease-in-out"> <a${addAttribute(`/projects/${slug}`, "href")}> <div class="p-5"> ${renderComponent($$result, "Image", $$Image, { "class": "h-40 w-full rounded-md", "src": images[photo](), "alt": title, "data-astro-transition-scope": renderTransition($$result, "dycb3fq2", "slide", "img-project-" + slug) })} <h3 class="text-pii-gray mt-3 text-xl"> ${title} </h3> <p class="mt-5 block text-xs truncate text-pii-gray"> ${description} </p> <div class="mt-4 flex flex-wrap gap-1"> ${tags.map((tag) => renderTemplate`<span class="rounded-full bg-pii-green px-2.5 py-0.5 text-xs text-pii-black"> ${tag} </span>`)} </div> </div> </a> </article>`;
 }, "C:/Users/Fjcc1/apps_projects/astro/portfolio_cv/src/components/Card.astro", "self");
 
 const PROJECTS = [
@@ -116,7 +119,7 @@ const PROJECTS = [
     title: "SaaS Birssa",
     description: " Birssa is a multichannel web system for creating collection campaigns and facilitating the management of payment agreements with debtors. This web system is designed for any collection agency to be able to use it",
     urlProject: "https://www.birssa.com",
-    photo: "src/images/projects/birssa.png",
+    photo: "/src/assets/projects/birssa.png",
     tags: ["Laravel", "Vue", "Vuetify", "MySQL", "Twilio", "SendGrid"],
     main: true
   },
@@ -126,7 +129,7 @@ const PROJECTS = [
     title: "Gateway Fabrication",
     description: "A web application was developed to track purchase orders, inventories of computer equipment and control of responsive letters from collaborators, also control of inventories of supplies in warehouses. (available only on localhost)",
     urlGithub: "https://www.youtube.com",
-    photo: "src/images/projects/gateway.png",
+    photo: "/src/assets/projects/gateway.png",
     tags: ["Laravel", "Vue", "Vuetify", "MySQL", "SQL Server"],
     main: true
   },
@@ -136,7 +139,7 @@ const PROJECTS = [
     title: "Web Page Toner´s Full",
     description: "I designed a website for the company Toner's Full, which is dedicated to selling toners and leasing multifunctional printers.",
     urlProject: "https://www.tonersfull.com",
-    photo: "src/images/projects/tonersfull.png",
+    photo: "/src/assets/projects/tonersfull.png",
     tags: ["HTML5", "Tailwind", "PHP", "Javascript"],
     main: true
   },
@@ -146,7 +149,7 @@ const PROJECTS = [
     title: "AgendaCRIT - Teletón",
     description: "A web application was developed so that patients' families could consult their upcoming appointments, their debt, the telephone directory and their absences",
     urlProject: "https://www.agendacrit.piilweb.com.mx",
-    photo: "src/images/projects/agendacrit.png",
+    photo: "/src/assets/projects/agendacrit.png",
     tags: ["PHP", "Jquery", "MySQL", "Bootstp", "SQL Server"],
     main: true
   },
@@ -157,7 +160,7 @@ const PROJECTS = [
     description: "Project made only to practice angular and tailwind css. Site still under construction",
     urlProject: "https://store-two-chi.vercel.app/",
     urlGithub: "https://github.com/FranciscoJCC/angular_platzi_store",
-    photo: "src/images/projects/api-rest-platzi.png",
+    photo: "/src/assets/projects/api-rest-platzi.png",
     tags: ["Angular", "Tailwind", "API Fake Platzi"],
     main: false
   },
@@ -167,7 +170,7 @@ const PROJECTS = [
     title: "Sellers API REST 👨‍🎓",
     description: "lorem impsun description of profject example text of description item card example",
     urlGithub: "https://github.com/FranciscoJCC/node_sellers",
-    photo: "src/images/projects/api-rest-sellers.png",
+    photo: "/src/assets/projects/api-rest-sellers.png",
     tags: ["Nodejs", "Express", "Sequelize", "Joi", "Passport", "PostgreSQL"],
     main: false
   },
