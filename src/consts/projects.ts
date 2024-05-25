@@ -7,7 +7,7 @@ export const PROJECTS: Array<Projects> = [
         title: "SaaS Birssa",
         description: " Birssa is a multichannel web system for creating collection campaigns and facilitating the management of payment agreements with debtors. This web system is designed for any collection agency to be able to use it",
         urlProject: "https://www.birssa.com",
-        photo: "images/projects/birssa.png",
+        photo: "/src/assets/projects/birssa.png",
         tags: ['Laravel', 'Vue', 'Vuetify','MySQL', 'Twilio', 'SendGrid'],
         main: true
     },
@@ -17,7 +17,7 @@ export const PROJECTS: Array<Projects> = [
         title: "Gateway Fabrication",
         description: "A web application was developed to track purchase orders, inventories of computer equipment and control of responsive letters from collaborators, also control of inventories of supplies in warehouses. (available only on localhost)",
         urlGithub: "https://www.youtube.com",
-        photo: "images/projects/gateway.png",
+        photo: "/src/assets/projects/gateway.png",
         tags: ['Laravel', 'Vue', 'Vuetify', 'MySQL', 'SQL Server'],
         main: true
     },
@@ -27,7 +27,7 @@ export const PROJECTS: Array<Projects> = [
         title: "Web Page Toner´s Full",
         description: "I designed a website for the company Toner's Full, which is dedicated to selling toners and leasing multifunctional printers.",
         urlProject: "https://www.tonersfull.com",
-        photo: "images/projects/tonersfull.png",
+        photo: "/src/assets/projects/tonersfull.png",
         tags: ['HTML5', 'Tailwind', 'PHP', 'Javascript'],
         main: true
     },
@@ -37,7 +37,7 @@ export const PROJECTS: Array<Projects> = [
         title: "AgendaCRIT - Teletón",
         description: "A web application was developed so that patients' families could consult their upcoming appointments, their debt, the telephone directory and their absences",
         urlProject: "https://www.agendacrit.piilweb.com.mx",
-        photo: "images/projects/agendacrit.png",
+        photo: "/src/assets/projects/agendacrit.png",
         tags: ['PHP', 'Jquery', 'MySQL', 'Bootstp', 'SQL Server'],
         main: true
     },
@@ -48,7 +48,7 @@ export const PROJECTS: Array<Projects> = [
         description: "Project made only to practice angular and tailwind css. Site still under construction",
         urlProject: "https://store-two-chi.vercel.app/",
         urlGithub: "https://github.com/FranciscoJCC/angular_platzi_store",
-        photo: "images/projects/api-rest-platzi.png",
+        photo: "/src/assets/projects/api-rest-platzi.png",
         tags: ['Angular', 'Tailwind', 'API Fake Platzi'],
         main: false
     },
@@ -58,7 +58,7 @@ export const PROJECTS: Array<Projects> = [
         title: "Sellers API REST 👨‍🎓",
         description: "lorem impsun description of profject example text of description item card example",
         urlGithub: "https://github.com/FranciscoJCC/node_sellers",
-        photo: "images/projects/api-rest-sellers.png",
+        photo: "/src/assets/projects/api-rest-sellers.png",
         tags: ['Nodejs', 'Express', 'Sequelize', 'Joi', 'Passport', 'PostgreSQL'],
         main: false
     },
