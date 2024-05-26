@@ -12,7 +12,7 @@ interface Props {
 }
 
 const { title, tags, description, photo, slug } = Astro.props;
-const images = import.meta.glob<{ default: ImageMetadata}>('/src/assets/projects/*.{jpeg,jpg,png,gif}');
+/* const images = import.meta.glob<{ default: ImageMetadata}>('/src/assets/projects/*.{jpeg,jpg,png,gif}'); */
 /* if (!images[photo]) throw new Error(`"${photo}" does not exist in glob: "src/assets/projects/*.{jpeg,jpg,png,gif}"`); */
 ---
 
@@ -21,7 +21,7 @@ const images = import.meta.glob<{ default: ImageMetadata}>('/src/assets/projects
 >
   <a href={`/projects/${slug}`}>
     <div class="p-5">
-      <Image class="h-40 w-full rounded-md" src={images[photo]()} alt={title} transition:name={"img-project-" + slug} transition:animate="slide"/>
+      <!-- <Image class="h-40 w-full rounded-md" src={images[photo]()} alt={title} transition:name={"img-project-" + slug} transition:animate="slide"/> -->
 
       <h3 class="text-pii-gray mt-3 text-xl">
         {title}
