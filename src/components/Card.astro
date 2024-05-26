@@ -13,7 +13,7 @@ interface Props {
 
 const { title, tags, description, photo, slug } = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata}>('/src/assets/projects/*.{jpeg,jpg,png,gif}');
-if (!images[photo]) throw new Error(`"${photo}" does not exist in glob: "src/assets/projects/*.{jpeg,jpg,png,gif}"`);
+/* if (!images[photo]) throw new Error(`"${photo}" does not exist in glob: "src/assets/projects/*.{jpeg,jpg,png,gif}"`); */
 ---
 
 <article
