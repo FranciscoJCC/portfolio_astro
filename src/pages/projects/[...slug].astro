@@ -30,7 +30,7 @@ export const prerender = true;
           <div class="relative h-64 sm:h-80 lg:h-full">
             <img
               alt={project.title}
-              src={'../' + project.photo}
+              src={project.photo}
               class="absolute inset-0 h-3/4 w-full rounded-md"
               transition:name={"img-project-" + project.slug} transition:animate="slide"
             />
