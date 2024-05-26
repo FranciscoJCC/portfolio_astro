@@ -69,7 +69,7 @@ export const PROJECTS: Array<Projects> = [
         description: "lorem impsun description of profject example text of description item card example",
         urlProject: "https://www.google.com",
         urlGithub: "https://www.youtube.com",
-        photo: "https://www.ovhcloud.com/sites/default/files/styles/large_screens_1x/public/2022-05/whatis_rest_api.webp",
+        photo: "/src/assets/projects/api-rest-sellers.png",
         tags: ['Nestjs', 'Swagger', 'PostgreSQL', 'TypeORM'],
         main: false
     },
