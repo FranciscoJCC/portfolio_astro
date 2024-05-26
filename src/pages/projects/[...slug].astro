@@ -17,7 +17,6 @@ const { slug } = Astro.params;
 
 const [project] = PROJECTS.filter((project) => project.slug === slug);
 
-console.log(slug);
 export const prerender = true;
 ---
 
