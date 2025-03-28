@@ -8,5 +8,10 @@ export interface Projects {
     urlProject?: string,
     urlGithub?: string,
     tags: string[],
-    main: boolean
+    main: boolean,
+    gallery?:{
+            id: number,
+            src: string,
+            alt: string
+    }[];
 }

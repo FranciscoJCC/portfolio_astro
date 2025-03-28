@@ -2,6 +2,50 @@ import type { Projects } from "../types/Projects";
 
 export const PROJECTS: Array<Projects> = [
     {
+        id: "actuar-sustentable",
+        slug: "actuar-sustentable",
+        title: "Actuar Sustentable",
+        description: "Web and mobile application to manage last-mile package delivery, pickups, route planning, and driver expenses.",
+        urlProject: "https://www.actuarsustentable.com:8091/login",
+        //urlGithub: null,
+        photo: "/src/assets/projects/actuar_sustentable.png",
+        tags: ['NodeJs', 'Express', 'Sequelize' , 'React', 'React Native', 'MySQL', 'SQL Server'],
+        main: true,
+        gallery: [
+            {
+                id: 0,
+                src: "/src/assets/projects/actuar_sustentable.png",
+                alt: "Actuar Sustentable"
+            },
+            {
+                id: 1,
+                src: "/src/assets/projects/actuar_routes.png",
+                alt: "Rutas - Actuar Sustentable"
+            },
+            {
+                id: 2,
+                src: "/src/assets/projects/actuar_deliveries.png",
+                alt: "Rutas - Actuar Sustentable"
+            },
+            {
+                id: 3,
+                src: "/src/assets/projects/actuar_expenses.png",
+                alt: "Actuar Sustentable - Viaticos"
+            }
+        ]
+    },
+    {
+        id: "salesoft-hpm",
+        slug: "salesoft-hpm",
+        title: "High Power de México",
+        description: "Web and mobile application to manage last-mile package delivery, pickups, route planning, and driver expenses.",
+        urlProject: "https://www.actuarsustentable.com:8091/login",
+        //urlGithub: null,
+        photo: "/src/assets/projects/hpm_salesoft.png",
+        tags: ['NodeJs', 'Express', 'Sequelize' , 'Vue JS', 'DI API', 'SAP B1', 'SQL Server'],
+        main: true
+    },
+    {
         id: "birssa",
         slug: "birssa",
         title: "SaaS Birssa",

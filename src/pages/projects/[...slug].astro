@@ -21,72 +21,107 @@ const [project] = PROJECTS.filter((project) => project.slug === slug);
 const images = import.meta.glob<{ default: ImageMetadata}>('/src/assets/projects/*.{jpeg,jpg,png,gif}');
 if (!images[project.photo]) throw new Error(`"${project.photo}" does not exist in glob: "src/assets/projects/*.{jpeg,jpg,png,gif}"`);
 
-export const prerender = true;
+const mainImage = (await images[project.photo]()).default;
+
+const galleryImages = await Promise.all(
+  project.gallery?.map(async (image) => {
+    if (!images[image.src]) throw new Error(`"${image.src}" does not exist in glob.`);
+    return { src: (await images[image.src]()).default.src, alt: project.title };
+  }) || []
+);
+
+//export const prerender = true;
 ---
 
 <Layout title=`Proyect ${project.title}`>
   <Navbar urlAboutMe="/#aboutme" urlExperience="/#experience" urlProjects="/projects"/>
-  <section>
-    <div class="mx-auto max-w-screen-2xl px-6 md:px-4 md:py-2 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 lg:h-screen">
-        <div class="relative z-10 lg:py-16">
-          <div class="relative h-64 sm:h-80 lg:h-full">
-            <Image
-              class="absolute inset-0 h-3/4 w-full rounded-md mt-5 md:mt-0"
-              src={images[project.photo]()}
-              alt={project.title}
-              transition:name={"img-project-" + project.slug} transition:animate="slide"
-            />
-          </div>
-        </div>
-
-        <div class="relative flex items-center justify-items-center">
-          <div class="px-2 md:p-8">
-            <h2 class="text-2xl font-bold sm:text-3xl mb-3 text-pii-gray">
-              {project.title}
-            </h2>
-            <div class="pt-separator-div"></div>
-            <p class="mt-6 text-pii-gray text-justify text-gray-600">
-              {project.description}
-            </p>
-            
-            <div class="mt-10">
-                <h3 class="text-2xl text-pii-gray">Technologies:</h3>
-                <div class="mt-4 flex flex-wrap gap-1">
-                  {
-                    project.tags.map((tag) => (
-                      <span
-                        class="rounded-full bg-pii-green px-2.5 py-0.5 text-xs text-purple"
-                      >
-                        {tag}
-                      </span>
-                    ))
-                  }
-                </div>
-
-              <div class="mt-10 flex gap-2">
-
-                  <h3 class="text-2xl inline-block text-pii-gray">Links:</h3>
-                
-                  {
-                      (project.urlGithub) ? <a href={project.urlGithub} target="_blank" rel="noopener" class="text-pii-gray"><Github/></a> : ''
-                  }
-                  {
-                      (project.urlProject) ? <a href={project.urlProject} target="_blank" rel="noopener" class="text-pii-gray"><Web/></a> : ''
-                  }
-                  
-              </div>
-              
-              <div class="mt-10 flex justify-center">
-                  <ButtonPrimary text="View All Projects" url="/projects"/>
-              </div>
-
-            </div>
-        </div>
+  
+  <section class="grid grid-cols-1 md:grid-cols-2 gap-6 mx-10 mt-10">
+    <div class="space-y-4">
+        
+      <img
+        id="mainImage"
+        class="w-full rounded-lg object-cover"
+        src={ mainImage.src }
+        alt={project.title}
+        transition:name={"img-project-" + project.slug} transition:animate="slide"
+      />
+        
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+        {
+          galleryImages.map(({src, alt}, index) => {
+            return (
+              <img
+                class={`w-full object-cover rounded-lg cursor-pointer hover:opacity-80 transition-opacity duration-200 gallery-image ${index === 0 ? "border-4 border-pii-green" : ""}`}
+                src={src}
+                alt={alt}
+                onclick="changeMainImage(event)"
+              />
+            );
+          })
+        }
       </div>
-
     </div>
-    
+    <div class="">
+      
+      <div class="flex items-center">
+        <div class="px-2 md:p-8">
+          <h2 class="text-2xl font-bold sm:text-3xl mb-3 text-pii-gray">
+            {project.title}
+          </h2>
+          <div class="pt-separator-div"></div>
+          <p class="mt-6 text-pii-gray text-justify text-gray-600">
+            {project.description}
+          </p>
+          
+          <div class="mt-10">
+              <h3 class="text-2xl text-pii-gray">Technologies:</h3>
+              <div class="mt-4 flex flex-wrap gap-1">
+                {
+                  project.tags.map((tag) => (
+                    <span
+                      class="rounded-full bg-pii-green px-2.5 py-0.5 text-xs text-purple"
+                    >
+                      {tag}
+                    </span>
+                  ))
+                }
+              </div>
+
+            <div class="mt-10 flex gap-2">
+
+                <h3 class="text-2xl inline-block text-pii-gray">Links:</h3>
+              
+                {
+                    (project.urlGithub) ? <a href={project.urlGithub} target="_blank" rel="noopener" class="text-pii-gray"><Github/></a> : ''
+                }
+                {
+                    (project.urlProject) ? <a href={project.urlProject} target="_blank" rel="noopener" class="text-pii-gray"><Web/></a> : ''
+                }
+                
+            </div>
+
+          </div>
+      </div>
+      </div>
     </div>
   </section>
+  <section class="text-center">
+    <div class="mt-10 flex justify-center">
+      <ButtonPrimary text="View All Projects" url="/projects"/>
+    </div>
+  </section>
+ 
+  <script is:inline>
+    function changeMainImage(event) {
+      const mainImage = document.getElementById('mainImage');
+      const galleryImages = document.querySelectorAll('.gallery-image');
+
+      mainImage.src = event.target.src;
+
+      galleryImages.forEach(img => img.classList.remove("border-4", "border-pii-green"));
+
+      event.target.classList.add("border-4", "border-pii-green");
+    }
+  </script>
 </Layout>
