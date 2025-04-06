@@ -52,7 +52,7 @@ const galleryImages = await Promise.all(
           galleryImages.map(({src, alt}, index) => {
             return (
               <img
-                class={`w-full object-cover rounded-lg cursor-pointer hover:opacity-80 transition-opacity duration-200 gallery-image ${index === 0 ? "border-4 border-pii-green" : ""}`}
+                class={`w-full object-cover rounded-lg cursor-pointer hover:opacity-80 transition-opacity duration-300 gallery-image transform hover:scale-105 ${index === 0 ? "border-4 border-pii-green" : ""}`}
                 src={src}
                 alt={alt}
                 onclick="changeMainImage(event)"
