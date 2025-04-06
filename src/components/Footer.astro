@@ -1,3 +1,7 @@
+---
+import Github from "../icons/Github.astro";
+---
+
 <footer class="">
   <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
     <div class="sm:flex sm:items-center sm:justify-between">
@@ -40,7 +44,12 @@
             fill="currentColor"></path> -->
         </svg>
       </div>
-      <p class="text-pii-green-bg text-center text-sm">Site Developed in Astro ❤️</p>
+      <div class="flex flex-row gap-4 justify-center items-center">
+        <p class="text-pii-green-bg text-center text-sm">Site Developed in Astro ❤️ </p>
+        <a href="https://github.com/FranciscoJCC/portfolio_astro" target="_blank" rel="noopener noreferrer" class="transform hover:scale-110 duration-300 ease-in-out text-pii-green-bg">
+          <Github/>
+        </a>
+      </div>
       <p class="text-pii-green-bg mt-4 text-center text-sm lg:mt-0 lg:text-right">
         Copyright &copy; 2025. All rights reserved.
       </p>
