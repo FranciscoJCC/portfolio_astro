@@ -5,7 +5,7 @@ export const PROJECTS: Array<Projects> = [
         id: "panel-admin",
         slug: "panel-admin",
         title: "Administration Panel",
-        description: "Web and mobile application to manage last-mile package delivery, pickups, route planning, and driver expenses.",
+        description: "Web application for managing users and permissions for all High Power Mexico applications. It also includes inventory and support ticket modules.",
         urlProject: "https://www.highpower-online.com:8094/",
         //urlGithub: null,
         photo: "/src/assets/projects/portal_admin_login.png",
