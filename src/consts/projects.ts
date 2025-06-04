@@ -2,6 +2,39 @@ import type { Projects } from "../types/Projects";
 
 export const PROJECTS: Array<Projects> = [
     {
+        id: "panel-admin",
+        slug: "panel-admin",
+        title: "Administration Panel",
+        description: "Web and mobile application to manage last-mile package delivery, pickups, route planning, and driver expenses.",
+        urlProject: "https://www.highpower-online.com:8094/",
+        //urlGithub: null,
+        photo: "/src/assets/projects/portal_admin_login.png",
+        tags: ['NodeJs', 'Express', 'Sequelize' , 'Vue3', 'Pinia', 'MySQL'],
+        main: true,
+        gallery: [
+            {
+                id: 0,
+                src: "/src/assets/projects/portal_admin_login.png",
+                alt: "Portal Admin"
+            },
+            {
+                id: 1,
+                src: "/src/assets/projects/portal_admin_responsives.png",
+                alt: "Cartas responsivas - Portal Admin"
+            },
+            {
+                id: 2,
+                src: "/src/assets/projects/portal_admin_tickets.png",
+                alt: "Tickets - Portal Admin"
+            },
+            {
+                id: 2,
+                src: "/src/assets/projects/portal_admin_permissions.png",
+                alt: "Permissions - Portal Admin"
+            }
+        ]
+    },
+    {
         id: "actuar-sustentable",
         slug: "actuar-sustentable",
         title: "Actuar Sustentable",
